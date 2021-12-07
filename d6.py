@@ -12,9 +12,8 @@ def print_school(school):
  
            
 class Fish():
-    def __init__(self, input_file, days):
+    def __init__(self, input_file):
         self.nums = []
-        self.days = days
         self.school = [-1] * 9
 
         self.cnt = 0
@@ -45,9 +44,9 @@ class Fish():
         # print_school(new_school)
         return new_school
 
-    def get_fish_by_days(self):
+    def get_fish_by_days(self, days):
         day = 0
-        while (day < self.days):
+        while (day < days):
             day += 1
             # print('day ---- {}'.format(day))
             self.school = self.get_new_school()
@@ -55,7 +54,6 @@ class Fish():
         print(sum(self.school))
            
            
-fish = Fish('d6.txt', 80)
-fish.get_fish_by_days()
-fish = Fish('d6.txt', 256)
-fish.get_fish_by_days()
+fish = Fish('d6.txt')
+fish.get_fish_by_days(80)
+fish.get_fish_by_days(256)
